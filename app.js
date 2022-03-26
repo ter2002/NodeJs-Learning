@@ -9,8 +9,15 @@ const PORT = process.env.PORT;
 const path = require("path");
 
 app.use(express.static(path.join(__dirname, "/public/")));
+
+app.set("views", "./src/views");
+app.set("view engine", "ejs");
+
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.render("index", {
+    username: "terzazaza",
+    customer: ["terzaz", "5788", "55588"],
+  });
 });
 
 app.listen(PORT, () => {
