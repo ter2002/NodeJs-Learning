@@ -14,7 +14,30 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 // app.get("/products/");
 productRouter.route("/").get((req, res) => {
-  res.render("products");
+  res.render("products", {
+    products: [
+      {
+        productTitle: "กก1",
+        productDescription: "หกดหกดหกดกห1",
+        productPrice: 45,
+      },
+      {
+        productTitle: "กก2",
+        productDescription: "หกดหกดหกดกห1",
+        productPrice: 46,
+      },
+      {
+        productTitle: "กก3",
+        productDescription: "หกดหกดหกดกห1",
+        productPrice: 47,
+      },
+      {
+        productTitle: "กก4",
+        productDescription: "หกดหกดหกดกห1",
+        productPrice: 48,
+      },
+    ],
+  });
 });
 
 productRouter.route("/1").get((req, res) => {
