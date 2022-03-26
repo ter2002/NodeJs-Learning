@@ -7,12 +7,20 @@ const morgan = require("morgan");
 const app = express();
 const PORT = process.env.PORT;
 const path = require("path");
-
+const productRouter = express.Router();
 app.use(express.static(path.join(__dirname, "/public/")));
 
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
+// app.get("/products/");
+productRouter.route("/").get((req, res) => {
+  res.send("Hello I am Product");
+});
 
+productRouter.route("/1").get((req, res) => {
+  res.send("Hello I am Product1");
+});
+app.use("/products", productRouter);
 app.get("/", (req, res) => {
   res.render("index", {
     username: "terzazaza",
