@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const app = express();
 const PORT = process.env.PORT;
 const path = require("path");
+const products = require("./data/products.json");
 const productRouter = express.Router();
 app.use(express.static(path.join(__dirname, "/public/")));
 
@@ -14,34 +15,12 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 // app.get("/products/");
 productRouter.route("/").get((req, res) => {
-  res.render("products", {
-    products: [
-      {
-        productTitle: "กก1",
-        productDescription: "หกดหกดหกดกห1",
-        productPrice: 45,
-      },
-      {
-        productTitle: "กก2",
-        productDescription: "หกดหกดหกดกห1",
-        productPrice: 46,
-      },
-      {
-        productTitle: "กก3",
-        productDescription: "หกดหกดหกดกห1",
-        productPrice: 47,
-      },
-      {
-        productTitle: "กก4",
-        productDescription: "หกดหกดหกดกห1",
-        productPrice: 48,
-      },
-    ],
-  });
+  res.render("products", products);
 });
 
-productRouter.route("/1").get((req, res) => {
-  res.send("Hello I am Product1");
+productRouter.route("/:id").get((req, res) => {
+  const id = req.params.id;
+  res.send("Hello I am Product " + id);
 });
 app.use("/products", productRouter);
 app.get("/", (req, res) => {

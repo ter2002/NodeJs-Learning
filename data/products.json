@@ -1,0 +1,34 @@
+{
+    "products": [
+      {
+          "id": "0",
+        "productTitle": "กก1",
+        "productDescription": "หกดหกดหกดกห1",
+        "productPrice": 45
+      },
+      {
+        "id": "1",
+        "productTitle": "กก2",
+        "productDescription": "หกดหกดหกดกห1",
+        "productPrice": 46
+      },
+      {
+        "id": "2",
+        "productTitle": "กก3",
+        "productDescription": "หกดหกดหกดกห1",
+        "productPrice": 47
+      },
+      {
+        "id": "3",
+        "productTitle": "กก4",
+        "productDescription": "หกดหกดหกดกห1",
+        "productPrice": 48
+      },
+      {
+        "id": "4",
+        "productTitle": "กก5",
+        "productDescription": "หกดหกดหกดกห1",
+        "productPrice": 49
+      }
+    ]
+  }
